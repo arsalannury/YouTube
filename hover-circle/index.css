@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.gradiant-border {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 20px;
+    height: 10rem;
+    width: 10rem;
+    border-radius: 100px;
+    background-color: #111827;
+    box-shadow: inset 20px 20px 39px #070a10,
+    inset -20px -20px 39px #1b263e ; 
+    position: relative;
+    cursor: pointer;
+}
+
+.gradiant-border::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    top: -10px;
+    height: calc(100% + 20px);
+    width: calc(100% + 20px);
+    background: linear-gradient(15deg,deepSkyBlue,deepPink,lawnGreen);
+    border-radius: 50%;
+    z-index: -1;
+    filter: blur(3px);
+}
+
+.gradiant-border:hover::after {
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
